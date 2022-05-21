@@ -10,6 +10,7 @@
 .prettierignore
 .prettierrc
 .releaserc
+.env
 Dockerfile
 docker-compose.yml
 Jenkinsfile
