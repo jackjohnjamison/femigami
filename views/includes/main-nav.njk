@@ -28,15 +28,18 @@
 {% set socialItems = [
   {
     title: "facebook",
-    href: "https://www.facebook.com/femigami"
+    href: "https://www.facebook.com/femigami",
+    glyph: "F"
   },
   {
     title: "instagram",
-    href: "http://www.instagram.com/femigami"
+    href: "http://www.instagram.com/femigami",
+    glyph: "I"
   },
   {
     title: "tiktok",
-    href: "https://www.tiktok.com/@femigami_?"
+    href: "https://www.tiktok.com/@femigami_?",
+    glyph: "T"
   }
 ] %}
 
@@ -47,6 +50,7 @@
         <image src="/images/femigami-logo-sm.png" />
       </a>
     </li>
+
     {% for item in navItems %}
       <li class="main-nav__item--link">
         <a href="{{item.href}}">
@@ -59,10 +63,16 @@
   <ul class="main-nav__social-nav" aria-label="social links">
     {% for item in socialItems %}
       <li class="main-nav__item main-nav__item--social-link">
-        <a href="{{item.href}}">
-          {{item.title}}
+        <a href="{{item.href}}" target="_blank">
+          {{item.glyph}}
         </a>
       </li>
     {% endfor %}
+
+    <li class="main-nav__item main-nav__item--social-link">
+      <a class="button" href="https://www.bn1magazine.co.uk/femigami-embrace-your-body-through-the-art-of-paperfolding/" target="_blank">
+        News
+      </a>
+    </li>
   </ul>
 </nav>

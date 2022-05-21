@@ -8,3 +8,8 @@ body {
 body {
   font-family: $bodyFont;
 }
+
+.wrapper {
+  max-width: 1360px;
+  margin: 0 auto;
+}

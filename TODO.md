@@ -3,3 +3,5 @@
 # Find a CMS framework
 # Auto router in ./lib
 # Look into proper SSL certification
+
+# Target _blank accesabilty 
