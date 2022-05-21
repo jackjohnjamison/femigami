@@ -20,6 +20,7 @@ jest.config.js
 LICENSE
 CHANGELOG.md
 README.md
+.docs
 
 # build files
 node_modules/

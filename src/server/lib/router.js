@@ -2,8 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/hello', async (_req, res) => {
-  res.status(200).json({ message: 'Hello World!' });
+router.get('/home', async (_req, res) => {
+  res.status(200).json({ message: 'Femigami' });
 });
 
 module.exports = router;
