@@ -25,17 +25,44 @@
   }
 ] %}
 
-<nav class="main-nav">
-  <div class="main-nav__item main-nav__item--logo">
-    <a href="/">
-      <image src="/images/femigami-logo-sm.png" />
-    </a>
-  </div>
-  {% for item in navItems %}
-    <div class="main-nav__item">
-      <a href="{{item.href}}">
-        {{item.title}}
+{% set socialItems = [
+  {
+    title: "facebook",
+    href: "https://www.facebook.com/femigami"
+  },
+  {
+    title: "instagram",
+    href: "http://www.instagram.com/femigami"
+  },
+  {
+    title: "tiktok",
+    href: "https://www.tiktok.com/@femigami_?"
+  }
+] %}
+
+<nav class="main-nav" role="navigation">
+  <ul class="main-nav__site-nav" aria-label="site navigation">
+    <li class="main-nav__item main-nav__item--logo">
+      <a href="/">
+        <image src="/images/femigami-logo-sm.png" />
       </a>
-    </div>
-  {% endfor %}
+    </li>
+    {% for item in navItems %}
+      <li class="main-nav__item--link">
+        <a href="{{item.href}}">
+          {{item.title}}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <ul class="main-nav__social-nav" aria-label="social links">
+    {% for item in socialItems %}
+      <li class="main-nav__item main-nav__item--social-link">
+        <a href="{{item.href}}">
+          {{item.title}}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
 </nav>

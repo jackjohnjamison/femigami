@@ -1,2 +1,8 @@
-// Includes
-@import "includes/_variables";
+// Variables
+@import "includes/__variables";
+
+// Site wide styles
+@import "includes/_global";
+
+// Components
+@import "includes/_main-nav";

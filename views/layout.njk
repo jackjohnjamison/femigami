@@ -6,14 +6,16 @@
     {# Adds the js class to the html root before the style sheet is loaded #}
     <script>document.documentElement.classList='js'</script>
 
+    {# Stylesheets #}
+    <link rel="stylesheet" href="css/styles.css">
+
+    {# Scripts #}
     {% block scripts %}{# For site level scripts #}
       <script src="js/test.js"></script>
 
       {% block extraScripts %}{% endblock %}{# For page level scripts #}
 
     {% endblock %}
-
-    <link rel="stylesheet" href="css/styles.css">
   </head>
 
   <body>
@@ -21,7 +23,6 @@
     <header>
       {% include "includes/main-nav.njk" %}
     </header>
-    
 
     <main class="content">
       <div class="brick">
