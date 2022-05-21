@@ -81,6 +81,7 @@
 ul.main-nav__social-nav {
   margin-left: auto;
   gap: $gauge;
+  padding-left: $gauge;
 }
 
 .main-nav__item--social-link {
@@ -117,6 +118,5 @@ ul.main-nav__social-nav {
 
   ul.main-nav__social-nav {
     display: none;
-    padding-left: $gauge;
   }
 }
