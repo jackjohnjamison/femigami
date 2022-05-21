@@ -17,7 +17,7 @@
     {# Scripts #}
     {% block scripts %}{# For site level scripts #}
       <script src="js/test.js"></script>
-      
+
       {% block extraScripts %}{% endblock %}{# For page level scripts #}
     {% endblock %}
   </head>
@@ -29,7 +29,8 @@
     </header>
 
     <main class="content">
-      <div class="brick">
+      <div class="wrapper">
+
         <h1>{{h1}}</h1>
         {% block content %}{% endblock %}
       </div>

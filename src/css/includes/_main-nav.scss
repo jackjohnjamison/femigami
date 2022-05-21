@@ -58,6 +58,7 @@
 .main-nav__item--link {
   flex-grow: 1;
   margin: 4px;
+  padding: 6px;
 }
 
 .main-nav__item--link a {
@@ -84,15 +85,38 @@ ul.main-nav__social-nav {
 
 .main-nav__item--social-link {
   font-family: social-icons;
-  font-size: 24px;
+  font-size: 26px;
 
   a {
     display: block;
-    padding: 4px;
+    padding: 6px;
     transition: color $transitionTime ease-out;
 
     &:hover {
       color: $brandColor1;    
     }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .main-nav {
+    padding-top: 10px;
+  }
+
+  .main-nav__item--logo img {
+    width: 50px;
+
+    &:hover {
+      background-color: rgba(255,255,255,.5)
+    }
+  }
+
+  .main-nav__item--link {
+    display: none;
+  }
+
+  ul.main-nav__social-nav {
+    display: none;
+    padding-left: $gauge;
   }
 }

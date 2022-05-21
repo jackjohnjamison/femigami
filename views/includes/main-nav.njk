@@ -56,6 +56,13 @@
       </a>
     </li>
 
+    <li class="main-nav__item main-nav__item--hamburger">
+      <input type="checkbox" id="menu" />
+      <label for="menu" class="hamburger">
+        <div></div>
+      </label>
+    </li>
+
     {% for item in navItems %}
       <li class="main-nav__item--link">
         <a href="{{item.href}}"{% if item.external %} target="_blank"{% endif %}>
