@@ -1,67 +1,36 @@
 <!doctype html>
-
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
+  <head>
+    {% include "includes/metatags.njk" %}
+    
+    {# Adds the js class to the html root before the style sheet is loaded #}
+    <script>document.documentElement.classList='js'</script>
 
-        {# SEO metatags #}
-        <title>Femigami | feminist origami workshops</title>
-        <meta name="description" content="Femigami specialises in hosting playful and thought-provoking workshops using the traditional art of origami to create unconventional paper creations, whilst facilitating conversations around body image, feminism and wellbeing.">
-        <link rel="canonical" href="https://www.femigami.com"/>
-        <meta property="og:site_name" content="Femigami"/>
-        <meta property="og:title" content="Femigami"/>
-        <meta property="og:url" content="https://www.femigami.com"/>
-        <meta property="og:type" content="website"/>
-        <meta property="og:image" content="/images/femigami-logo.png?format=1500w"/>
-        <meta itemprop="name" content="femigami"/>
-        <meta itemprop="url" content="https://www.femigami.com"/>
-        <meta itemprop="thumbnailUrl" content="/images/femigami-logo.png?format=1500w"/>
-        <link rel="image_src" href="/images/femigami-logo.png?format=1500w" />
-        <meta itemprop="image" content="/images/femigami-logo.png?format=1500w"/>
-        <meta name="twitter:title" content="femigami"/>
-        <meta name="twitter:image" content="/images/femigami-logo.png?format=1500w"/>
-        <meta name="twitter:url" content="https://www.femigami.com"/>
-        <meta name="twitter:card" content="summary"/>
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block scripts %}{# For site level scripts #}
+      <script src="js/test.js"></script>
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
-        <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
-        <link rel="manifest" href="/site.webmanifest">
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="theme-color" content="#ffffff">
-        
-        {# Adds the js class to the html root before the style sheet is loaded #}
-        <script>document.documentElement.classList='js'</script>
+      {% block extraScripts %}{% endblock %}{# For page level scripts #}
 
-        {% block scripts %}{# For site level scripts #}
+    {% endblock %}
 
-            <script src="js/test.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
 
-            {% block extraScripts %}{% endblock %}{# For page level scripts #}
+  <body>
+      
+    <header>
+      {% include "includes/main-nav.njk" %}
+    </header>
+    
 
-        {% endblock %}
+    <main class="content">
+      <div class="brick">
+        <h1>{{h1}}</h1>
+        {% block content %}{% endblock %}
+      </div>
+    </main>
 
-        <link rel="stylesheet" href="css/styles.css">
-    </head>
+    <footer></footer>
 
-    <body>
-        <div class="content dark" id="content">
-            <header>
-                <nav></nav>
-            </header>
-            
-            <main class="main">
-                <div class="brick">
-                    <h1>{{h1}}</h1>
-                    {% block content %}{% endblock %}
-                </div>
-            </main>
-
-            <footer></footer>
-        </div>
-
-    </body>
+  </body>
 </html>

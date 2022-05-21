@@ -1,0 +1,41 @@
+{% set navItems = [
+  {
+    title: "Our story",
+    href: "/about"
+  },
+  {
+    title: "Our workshops",
+    href: "/whatweoffer"
+  },
+  {
+    title: "What's on",
+    href: "/events"
+  },
+  {
+    title: "Gallery",
+    href: "/gallery"
+  },
+  {
+    title: "Partners",
+    href: "/partnerspress"
+  },
+  {
+    title: "Contact",
+    href: "/contact"
+  }
+] %}
+
+<nav class="main-nav">
+  <div class="main-nav__item main-nav__item--logo">
+    <a href="/">
+      <image src="/images/femigami-logo-sm.png" />
+    </a>
+  </div>
+  {% for item in navItems %}
+    <div class="main-nav__item">
+      <a href="{{item.href}}">
+        {{item.title}}
+      </a>
+    </div>
+  {% endfor %}
+</nav>
