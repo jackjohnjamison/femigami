@@ -7,10 +7,24 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        {% if noIndex %}<meta name="robots" content="noindex">{% endif %}
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon//favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon//favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
         
         {# Adds the js class to the html root before the style sheet is loaded #}
         <script>document.documentElement.classList='js'</script>
+
+        {% block scripts %}{# For site level scripts #}
+
+            <script src="js/test.js"></script>
+
+            {% block extraScripts %}{% endblock %}{# For page level scripts #}
+
+        {% endblock %}
 
         <link rel="stylesheet" href="css/styles.css">
     </head>
@@ -30,14 +44,6 @@
 
             <footer></footer>
         </div>
-
-        {% block scripts %}{# For site level scripts #}
-
-            <script src="js/test.js"></script>
-
-            {% block extraScripts %}{% endblock %}{# For page level scripts #}
-
-        {% endblock %}
 
     </body>
 </html>
