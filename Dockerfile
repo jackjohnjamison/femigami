@@ -1,22 +1,12 @@
-FROM node:14-slim
+FROM node:latest
 
-WORKDIR /app
+ENV IN_IMAGE="true"
 
-# Setup a path for using local npm packages
-RUN mkdir -p /opt/node_modules
+WORKDIR /main
+COPY package.json /main
+RUN npm install
+COPY . /main
 
-COPY ./package.json /app
-COPY ./package-lock.json /app
+CMD node ./bin/server.js
 
-RUN npm ci
-
-COPY ./ /app
-
-RUN npm run client:build
-# server build needs to run after client build because the client build using Vite
-# removes the dist/ folder before compiling its code
-RUN npm run server:build
-
-EXPOSE 3001
-
-CMD ["npm", "start"]
+EXPOSE 80

@@ -1,7 +1,3 @@
-node_modules
-.DS_Store
-dist
-dist-ssr
-*.local
-.eslintcache
+node_modules/
+debug.log
 .env
