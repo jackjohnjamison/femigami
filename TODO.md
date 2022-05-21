@@ -4,4 +4,6 @@
 # Auto router in ./lib
 # Look into proper SSL certification
 
-# Target _blank accesabilty 
+# Target _blank accesabilty
+
+# Think about ordering scripts for loading performance 

@@ -7,9 +7,12 @@ body {
 
 body {
   font-family: $bodyFont;
+  font-weight: 400;
 }
 
 .wrapper {
   max-width: 1360px;
   margin: 0 auto;
+  padding-left: 1%;
+  padding-right: 1%;
 }
