@@ -1,56 +1,38 @@
 .main-nav {
   display: flex;
-  flex-wrap: wrap;
-  align-content: center;
   align-items: center;
-  padding-top: $gauge;
+  padding-top: 10px;
+
+  a {
+    text-decoration: none;
+  }
 
   // Style reset for ol
   ol {
     list-style: none;
     padding: 0;
     margin: 0;
-    flex-grow: 1;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  // Site and social navs
-  .main-nav__site-nav ol,
-  .main-nav__social-nav ol {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     justify-content: space-between;
-    align-items: center;
   }
 
-  // Site name wrapper
-  .main-nav__site-nav {
-    display: flex;
-    max-width: 1000px;
-    width: 100%;    
-  } 
-
   // Header logo
-  .site-nav__logo {
-    a {
-      display: block;
-      position: relative;
+  .logo {
+    display: block;
+    position: relative;
 
-      // On hover gradient halo
-      &:before {
-        content: '';
-        background: radial-gradient(circle, $brandColor1 60%, #fff 70%);
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        z-index: -1;
-      }
+    // On hover gradient halo
+    &:before {
+      content: '';
+      background: radial-gradient(circle, $brandColor1 60%, #fff 70%);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: -1;
     }
 
     img {
@@ -60,12 +42,23 @@
       display: block;
 
       &:hover {
-        background-color: rgba(255,255,255,0)
+        background-color: transparent
       }
     } 
   }
 
-  // Site nav link
+  .expandable-content {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .main-nav__site-nav {
+    flex-grow: 1;
+    max-width: 1000px;
+    flex-wrap: wrap;
+  } 
+
   .site-nav__link {
     flex-grow: 1;
     margin: 4px;
@@ -73,14 +66,14 @@
 
     a {
       display: block;
-      padding-top: $gauge;
-      padding-bottom: $gauge;
+      padding-top: 20px;
+      padding-bottom: 20px;
   
       width: 100%;
   
       text-align: center;
   
-      border-bottom: dotted rgba(255,255,255,0);
+      border-bottom: dotted transparent;
       transition: border-color $transitionTime ease-out;
   
       &:hover {
@@ -91,20 +84,17 @@
 
   .main-nav__social-nav {
     margin-left: auto;
-
-    ol {
-      gap: $gauge;
-    }
+    gap: 10px;
   }
 
   .social-nav__link {
-    font-family: social-icons;
+    font-family: 'social-icons';
     font-size: 26px;
 
     a {
       display: block;
       padding: 8px;
-      border: dotted rgba(255,255,255,0);
+      border: dotted transparent;
       border-radius: 10px;
       transition: border-color $transitionTime ease-out;
 
@@ -116,11 +106,9 @@
 
   // Mobile Nav
   @media screen and (max-width: $mobile) {
-    .main-nav {
-      padding-top: 10px;
-    }
+    flex-wrap: wrap;
 
-    .site-nav__logo img {
+    .logo img {
       width: 50px;
 
       &:hover {
@@ -128,9 +116,67 @@
       }
     }
 
-    .main-nav__social-nav,
-    .main-nav__site-nav ol {
-      display: none;
+    .main-nav__site-nav {
+      width: 100%;
+      display: block;
+    }
+
+    .expandable-content {
+      width: 100%;
+      justify-content: space-around;
+    }
+
+    .site-nav__link {
+      display: block;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+
+      a {
+        transition: all .5s ease-in-out;
+        white-space: nowrap;
+        background: linear-gradient(180deg, transparent 0%, #fff);
+        width: auto;
+        max-width: 200px;
+        margin: 0 auto;
+        padding: 0;
+        color: transparent;
+        height: 0;
+        font-size: 20px;
+        border-width: 0;
+      }
+    }
+
+    .main-nav__social-nav {
+      transition: all .5s ease-in-out;
+      margin-left: 0;
+      height: 0;
+
+      a {
+        transition: all .5s ease-in-out;
+        color: transparent;
+      }
+    }
+
+    // Burger menu expanded
+    html:not(.js) & .js-expandable:focus ~ .expandable-content,
+    .js-expandable[aria-expanded="true"] ~ .expandable-content,
+    .expandable-content:focus-within {
+
+      .site-nav__link a {
+        color: $darkFontColor;
+        height: 20px;
+        border-width: 3px;
+        padding: 10px;
+      }
+
+      .main-nav__social-nav {
+        height: 60px;
+  
+        a {
+          color: $darkFontColor;
+        }
+      }
     }
   }
 }

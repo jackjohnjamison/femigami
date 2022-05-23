@@ -48,24 +48,20 @@
   }
 ] %}
 
-<div class="main-nav">
-  <nav role="navigation" aria-label="site navigation" class="main-nav__site-nav">
-    
-    <div class="site-nav__logo">
-      <a href="/">
-        <image src="/images/femigami-logo-sm.png" />
-      </a>
-    </div>
+<nav role="navigation" aria-label="main navigation" class="main-nav">
+  <a class="logo" href="/">
+    <image src="/images/femigami-logo-sm.png" alt="femigami logo" />
+  </a>
 
-    <div class="site-nav__hamburger js-expandable" tabindex="0" role="button" type="button" aria-label="menu toggle" class="js-expandable">
-      <div class="hamburger__inner">
-        <div></div>
-      </div>
+  <div class="site-nav__hamburger js-expandable" tabindex="0" role="button" type="button" aria-label="menu toggle">
+    <div class="hamburger__inner">
+      <div></div>
     </div>
+  </div>
 
-    <ol>
+  <div class="expandable-content">
+    <ol class="main-nav__site-nav">
       {% for item in navItems %}
-        
         <li class="site-nav__link">
           <a href="{{item.href}}"{% if item.external %} target="_blank"{% endif %}>
             {{item.title}}
@@ -73,10 +69,8 @@
         </li>
       {% endfor %}
     </ol>
-  </nav>
 
-  <nav role="navigation" aria-label="social links" class="main-nav__social-nav">
-    <ol>
+    <ol class="main-nav__social-nav">
       {% for item in socialItems %}
         <li class="social-nav__link">
           <a href="{{item.href}}" target="_blank">
@@ -85,5 +79,5 @@
         </li>
       {% endfor %}
     </ol>
-  </nav>
-</div>
+  </div>
+</nav>
