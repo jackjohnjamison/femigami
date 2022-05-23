@@ -48,37 +48,41 @@
   }
 ] %}
 
-<nav class="main-nav" role="navigation">
-  <ul class="main-nav__site-nav" aria-label="site navigation">
-    <li class="main-nav__item main-nav__item--logo">
-      <a href="/">
-        <image src="/images/femigami-logo-sm.png" />
-      </a>
-    </li>
-
-    <li class="main-nav__item main-nav__item--hamburger">
-      <input type="checkbox" id="menu" />
-      <label for="menu" class="hamburger">
-        <div></div>
-      </label>
-    </li>
-
-    {% for item in navItems %}
-      <li class="main-nav__item--link">
-        <a href="{{item.href}}"{% if item.external %} target="_blank"{% endif %}>
-          {{item.title}}
+<div class="main-nav" role="navigation">
+  <nav aria-label="site navigation" class="main-nav__site-nav">
+    <ul>
+      <li class="site-nav__logo">
+        <a href="/">
+          <image src="/images/femigami-logo-sm.png" />
         </a>
       </li>
-    {% endfor %}
-  </ul>
 
-  <ul class="main-nav__social-nav" aria-label="social links">
-    {% for item in socialItems %}
-      <li class="main-nav__item main-nav__item--social-link">
-        <a href="{{item.href}}" target="_blank">
-          {{item.glyph}}
-        </a>
+      <li class="main-nav__item--hamburger">
+        <input type="checkbox" id="menu" />
+        <label for="menu" class="hamburger">
+          <div></div>
+        </label>
       </li>
-    {% endfor %}
-  </ul>
-</nav>
+
+      {% for item in navItems %}
+        <li class="site-nav__link">
+          <a href="{{item.href}}"{% if item.external %} target="_blank"{% endif %}>
+            {{item.title}}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <nav aria-label="social links" class="main-nav__social-nav">
+    <ul>
+      {% for item in socialItems %}
+        <li class="social-nav__link">
+          <a href="{{item.href}}" target="_blank">
+            {{item.glyph}}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>
