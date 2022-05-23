@@ -29,11 +29,16 @@
     </header>
 
     <main class="content">
-      <div class="wrapper">
+      {% block hero %}
+        <div class="hero-banner">
+          <div class="wrapper">
+            <h1>{{h1}}</h1>
+          </div>
+        </div>
+      {% endblock %}
 
-        <h1>{{h1}}</h1>
-        {% block content %}{% endblock %}
-      </div>
+      {% block content %}{% endblock %}
+
     </main>
 
     <footer></footer>

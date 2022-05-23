@@ -2,6 +2,8 @@ const navToggleElm = document.getElementById("js-nav-toggle");
 const navContent = document.querySelector(".js-nav-content");
 const navLinks = navContent.querySelectorAll("a");
 
+const mobileWidth = 900;
+
 const isOpen = () => {
   return navToggleElm.getAttribute("aria-expanded") === "true";
 };

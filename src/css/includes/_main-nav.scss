@@ -109,6 +109,7 @@
   // Mobile Nav
   @media screen and (max-width: $mobile) {
     flex-wrap: wrap;
+    padding-top: 5px;
 
     .logo img {
       width: 50px;
@@ -131,6 +132,7 @@
       width: 100%;
       background-color: #fff;
       justify-content: center;
+      pointer-events: none;
     }
 
     .site-nav__link {
@@ -167,6 +169,7 @@
     html:not(.js) & #js-nav-toggle:focus ~ .js-nav-content,
     #js-nav-toggle[aria-expanded="true"] ~ .js-nav-content,
     .js-nav-content:focus-within {
+      pointer-events: auto;      
 
       .site-nav__link a {
         color: $darkFontColor;

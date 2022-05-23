@@ -7,3 +7,6 @@
 # Target _blank accesabilty
 
 # Think about ordering scripts for loading performance 
+
+
+# AHHHHAHAHAHA Fix mobile header breaking links of desktop!!!!!!!!
