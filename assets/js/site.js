@@ -1,0 +1,1 @@
+"use strict";(function(){'use strict';(function(){var a=document.querySelectorAll(".js-expandable");a.forEach(function(a){a.setAttribute("aria-expanded",!1),a.addEventListener("click",function(){var b=a.getAttribute("aria-expanded");a.setAttribute("aria-expanded","true"!==b)})})})()})();

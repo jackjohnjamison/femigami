@@ -29,7 +29,7 @@ const processJS = (script) => {
     .pipe(
       rollup({
         input: `src/js/${script}.js`,
-        output: { format: "esm" },
+        output: { format: "iife" },
       })
     )
     .pipe(
@@ -47,7 +47,7 @@ const processJS = (script) => {
     .pipe(gulp.dest(paths.js.dist));
 };
 
-const scripts = ["test"];
+const scripts = ["site"];
 
 const processAllJS = async () => {
   scripts.forEach((script) => processJS(script));
