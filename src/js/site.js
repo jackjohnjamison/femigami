@@ -1,3 +1,3 @@
-import expandToggle from "./imports/expand-toggle";
+import initNavToggle from "./imports/nav-toggle";
 
-expandToggle();
+initNavToggle();

@@ -1,8 +1,9 @@
 .main-nav {
+  position: relative;
   display: flex;
   align-items: center;
   padding-top: 10px;
-
+  
   a {
     text-decoration: none;
   }
@@ -22,6 +23,7 @@
   .logo {
     display: block;
     position: relative;
+    z-index: 1;
 
     // On hover gradient halo
     &:before {
@@ -47,7 +49,7 @@
     } 
   }
 
-  .expandable-content {
+  .js-nav-content {
     flex-grow: 1;
     display: flex;
     flex-wrap: wrap;
@@ -117,18 +119,23 @@
     }
 
     .main-nav__site-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: 100%;
-      display: block;
     }
 
-    .expandable-content {
+    .js-nav-content {
+      position: absolute;
+      top: 100%;
       width: 100%;
-      justify-content: space-around;
+      background-color: #fff;
+      justify-content: center;
     }
 
     .site-nav__link {
       display: block;
-      text-align: center;
+      width: fit-content;
       margin: 0;
       padding: 0;
 
@@ -136,14 +143,12 @@
         transition: all .5s ease-in-out;
         white-space: nowrap;
         background: linear-gradient(180deg, transparent 0%, #fff);
-        width: auto;
-        max-width: 200px;
-        margin: 0 auto;
         padding: 0;
         color: transparent;
         height: 0;
         font-size: 20px;
         border-width: 0;
+        width: auto;
       }
     }
 
@@ -159,9 +164,9 @@
     }
 
     // Burger menu expanded
-    html:not(.js) & .js-expandable:focus ~ .expandable-content,
-    .js-expandable[aria-expanded="true"] ~ .expandable-content,
-    .expandable-content:focus-within {
+    html:not(.js) & #js-nav-toggle:focus ~ .js-nav-content,
+    #js-nav-toggle[aria-expanded="true"] ~ .js-nav-content,
+    .js-nav-content:focus-within {
 
       .site-nav__link a {
         color: $darkFontColor;
